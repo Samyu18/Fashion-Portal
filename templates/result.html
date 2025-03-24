@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Suggestions & Try-On</title>
+</head>
+<body>
+    <h2>Your Recommendations:</h2>
+    <ul>
+        {% for item in recommendations %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if output_image %}
+        <h3>2D Try-On Result:</h3>
+        <img src="{{ output_image }}" alt="Try-On Result">
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>AI Fashion Recommendation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>👗 AI Fashion Recommendation Portal 🎨</h1>
+            <p class="intro">
+                Get personalized dress suggestions based on your <b>skin tone</b> and <b>body shape</b>.
+                Try on outfits with 2D/3D visualization using your own face and dress pictures! 💃🕺
+            </p>
+            <a href="#features" class="btn-explore">Explore Features ⬇️</a>
+        </div>
+        <div class="auth-links">
+            <a href="/login" class="btn-login">Login 🔐</a>
+            <a href="/signup" class="btn-signup">Sign Up ✨</a>
+        </div>
+        <section id="features" class="features">
+            <h2>✨ Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item fadeIn">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Personalized Suggestions</h3>
+                    <p>Get AI-powered dress and color recommendations tailored to your body type and skin tone.</p>
+                </div>
+                <div class="feature-item fadeIn">
+                    <i class="fas fa-user"></i>
+                    <h3>Face & Dress Try-On</h3>
+                    <p>Upload your face and dress to see how it looks with 2D and 3D try-on options.</p>
+                </div>
+                <div class="feature-item fadeIn">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced AI models analyze body shapes and give accurate suggestions.</p>
+                </div>
+                <div class="feature-item fadeIn">
+                    <i class="fas fa-camera"></i>
+                    <h3>Real-Time Preview</h3>
+                    <p>Visualize the outfit instantly on your uploaded picture with AI-powered graphics.</p>
+                </div>
+            </div>
+        </section>
+        <div class="form-section">
+            <h2>🎯 Get Personalized Suggestions</h2>
+            <form action="/suggestions" method="post" class="animate-form">
+                <label for="skin_tone">Select Skin Tone:</label>
+                <select name="skin_tone" required>
+                    <option value="fair">Fair</option>
+                    <option value="dusky">Dusky</option>
+                    <option value="dark">Dark</option>
+                </select>
+
+                <label for="body_shape">Select Body Shape:</label>
+                <select name="body_shape" required>
+                    <option value="hourglass">Hourglass</option>
+                    <option value="pear">Pear</option>
+                    <option value="rectangle">Rectangle</option>
+                </select>
+
+                <button type="submit" class="btn-submit">Get Suggestions 🎯</button>
+            </form>
+        </div>
+        <div class="upload-section">
+            <h2>📸 Upload Face & Dress for Try-On</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data" class="animate-upload">
+                <label>Upload Face Picture:</label>
+                <input type="file" name="face" required>
+                <label>Upload Dress Picture:</label>
+                <input type="file" name="dress" required>
+
+                <button type="submit" class="btn-upload">Try-On Now! 🚀</button>
+            </form>
+        </div>
+    </div>
+    <div class="auth-section">
+    <a href="/login" class="btn-login pulse">Login 🔐</a>
+    <a href="/signup" class="btn-signup pulse">Sign Up ✨</a>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fadeIn').each(function (i) {
+                $(this).delay(300 * i).animate({ opacity: 1, top: '0px' }, 800);
+            });
+        });
+    </script>
+</body>
+</html>
